@@ -1,0 +1,85 @@
+<style>
+
+
+    .ie-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: white;
+}
+.ie-menu {
+  background: #d4d0c8;
+  padding: 3px;
+  border-bottom: 1px solid #808080;
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.ie-menu span {
+  cursor: default;
+}
+
+.ie-toolbar {
+  background: #d4d0c8;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid #808080;
+}
+
+.ie-toolbar button {
+  border: 2px outset #fff;
+  background: #c0c0c0;
+  width: 26px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.ie-toolbar button:active {
+  border: 2px inset #fff;
+}
+
+.ie-toolbar input {
+  flex: 1;
+  height: 22px;
+  border: 1px inset #fff;
+  padding: 2px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevents bottom scrollbar */
+  font-family: Tahoma, Arial, sans-serif;
+
+    user-select: none;
+}
+
+</style>
+
+  <div class="ie-menu">
+    <span>File</span>
+    <span>Edit</span>
+    <span>View</span>
+    <span>Favorites</span>
+    <span>Tools</span>
+    <span>Help</span>
+  </div>
+
+  <div class="ie-toolbar">
+    <button>◀</button>
+    <button>▶</button>
+    <button>⟳</button>
+    <input value="https://www.microsoft.com">
+  </div>
+
+  <iframe class="ie-frame" src="https://www.microsoft.com"></iframe>
+</div>

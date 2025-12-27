@@ -1,0 +1,365 @@
+/* Reset everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevents bottom scrollbar */
+  font-family: Tahoma, Arial, sans-serif;
+
+    user-select: none;
+}
+/* Body background */
+body {
+    background-image: url('https://d7hftxdivxxvm.cloudfront.net/?quality=80&resize_to=width&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2F2RNK1P0BYVrSCZEy_Sd1Ew%252F3417757448_4a6bdf36ce_o.jpg&width=910');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+.window {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.window.maximized {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+}
+
+.window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 600px;
+  height: 400px;
+  background: white;
+
+  border-radius: 6px;               /* rounded corners */
+
+  z-index: 1000;
+  overflow: hidden;                 /* prevent header/content from spilling */
+}
+
+.window-header {
+  background-image: url("./window/Screenshot%202025-12-27%20125019.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top left;
+  color: white;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top-left-radius: 6px;      /* round top-left corner */
+  border-top-right-radius: 6px;     /* round top-right corner */
+}
+
+.window.maximized {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;              /* full viewport width */
+  height: 97vh !important;             /* full viewport height */
+  border-radius: 0 !important;          /* remove rounded corners */
+  box-shadow: none;          /* optional: remove shadow when maximized */
+}
+
+/* Close button */
+.window-header .close-btn {
+    background: url("window/close.png") no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px; /* hides text */
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Maximize button */
+.window-header .maximize-btn {
+    background: url("window/maxize.png") no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    padding: 0;
+    cursor: pointer;
+}
+
+  
+.window-header .close-btn:hover {
+  background: url('window/closehover.png'); /* use your image */
+    background-size: contain; /* scale image to fit button */
+  width: 25px;  /* adjust size as needed */
+  height: 25px; /* adjust size as needed */
+}
+
+.window-header .close-btn:active {
+  background: url('window/closeacitve.png'); /* use your image */
+  background-size: contain; /* scale image to fit button */
+  width: 25px;  /* adjust size as needed */
+  height: 25px; /* adjust size as needed */
+}
+
+  
+.window-header .maximize-btn:hover {
+  background: url('window/maxizehover.png'); /* use your image */
+    background-size: contain; /* scale image to fit button */
+  width: 25px;  /* adjust size as needed */
+  height: 25px; /* adjust size as needed */
+}
+
+.window-header .maximize-btn:active {
+  background: url('window//maxizeactive.png'); /* use your image */
+  background-size: contain; /* scale image to fit button */
+  width: 25px;  /* adjust size as needed */
+  height: 25px; /* adjust size as needed */
+}
+.window-header .minize-btn {
+    background: url("window/minize.png") no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    padding: 0;
+    cursor: pointer;
+}
+.window-header .minize-btn:hover {
+  background: url('window/minizehover.png'); /* use your image */
+    background-size: contain; /* scale image to fit button */
+  width: 25px;  /* adjust size as needed */
+  height: 25px; /* adjust size as needed */
+}
+
+.window-header .minize-btn:active {
+  background: url('window/minizeactive.png'); /* use your image */
+  background-size: contain; /* scale image to fit button */
+  width: 25px;  /* adjust size as needed */
+  height: 25px; /* adjust size as needed */
+}
+/* Taskbar */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;            /* XP height */
+  display: flex;
+  align-items: flex-end;   /* bottom-align start button & tray */
+  padding: 0;
+  margin: 0;
+  background-image: url("./taskbar/xp_bg.png");
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  line-height: 0;
+}
+
+/* Start button */
+.start-button {
+  width: 110px;
+  height: 30px;
+  margin: 0;
+  margin-bottom: 1px;       /* XP vertical offset */
+  background-image: url("./taskbar/Startmenuunholder.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+  cursor: pointer;
+}
+.start-button:hover {
+  background-image: url("./taskbar/Startmenuunhold.png");
+}
+.start-button:active,
+.start-button.active {
+  background-image: url("./taskbar/Startmenupressed.png");
+  margin-bottom: 0;        /* pressed sinks down 1px */
+}
+
+/* Spacer pushes tray/clock to right */
+.taskbar-spacer {
+  flex: 1;
+}
+
+/* Tray */
+.tray {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;      /* bottom-align clock */
+  justify-content: flex-end;  /* push clock to right */
+  margin: 0;
+  padding: 0 6px 0 0;
+  line-height: 0;
+  background-image: url("./taskbar/tary.png");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+/* Clock */
+.clock {
+  background: rgba(0, 0, 0, 0);  /* optional XP-style background */
+  color: white;
+  padding: 2px 8px;             /* vertical padding smaller for alignment */
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 18px;             /* smaller than height for XP alignment */
+  height: 22px;
+ margin: 0 2px 4px 0;
+ text-align: center;
+}
+
+.start-menu {
+  
+  position: fixed ;
+  bottom: 30px;
+  left: 0;
+
+  width: 380px;
+  height: 430px;
+
+  background: linear-gradient(#3b6db3, #1f3f7f);
+  border-radius: 8px 8px 4px 4px;
+
+
+  display: none;
+  font-family: Tahoma, Arial, sans-serif;
+  color: black;
+}
+
+/* Header (user area) */
+.start-header {
+  display: flex;
+  align-items: center;
+
+  height: 54px;
+  padding: 8px 10px;
+
+  background: linear-gradient(#4f87e3, #2a5db0);
+  color: white;
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* User picture */
+.user-pic {
+  width: 40px;
+  height: 40px;
+
+  margin-right: 10px;
+
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: white;
+}
+
+/* Username text */
+.username {
+  white-space: nowrap;
+}
+
+.desktop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 30px; /* taskbar height */
+
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 72px);
+  grid-auto-rows: 80px;
+  gap: 8px;
+
+  user-select: none;
+}
+
+/* Desktop icons */
+.icon {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: white;
+  cursor: default;
+  text-shadow: 2px 2px #000000;
+}
+
+/* Icon image */
+.icon img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto 4px;
+}
+
+/* Hover */
+.icon:hover span {
+  background: rgba(0,0,128,0.5);
+  border: 1px dotted white;
+}
+
+/* Label */
+.icon span {
+  display: inline-block;
+  padding: 1px 3px;
+}
+
+/* Body */
+.start-body {
+  display: flex;
+  height: calc(100% - 54px);
+}
+
+/* Left column */
+.start-left {
+  width: 50%;
+  background: #f0f4fb;
+  padding: 6px;
+}
+
+/* Right column */
+.start-right {
+  width: 50%;
+  background: #dbe7f6;
+  padding: 6px;
+}
+
+/* Menu items */
+.start-item {
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.start-item:hover {
+  background: #316ac5;
+  color: white;
+}
+
+/* Footer buttons */
+.start-footer {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  
+}
+
+.start-footer button {
+  font-size: 11px;
+  padding: 4px 8px;
+  border: 1px solid #777;
+  background: linear-gradient(#fff, #dcdcdc);
+  cursor: pointer;
+}

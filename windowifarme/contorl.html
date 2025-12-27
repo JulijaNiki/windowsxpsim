@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Windows XP Control Panel (Mockup)</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Tahoma, Verdana, sans-serif;
+        background: #3a6ea5;
+    }
+
+    .window {
+        width: 900px;
+        margin: 30px auto;
+        background: #5a78d6;
+        border: 2px solid #2b4f9c;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .titlebar {
+        background: linear-gradient(#2b61c9, #1f4fa3);
+        color: white;
+        padding: 6px 10px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .content {
+        display: flex;
+        padding: 20px;
+    }
+
+    .sidebar {
+        width: 220px;
+        background: #e7f0ff;
+        border-right: 1px solid #9bb7e0;
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .sidebar h4 {
+        margin-top: 0;
+        color: #003399;
+    }
+
+    .main {
+        flex: 1;
+        padding: 10px 30px;
+        color: white;
+    }
+
+    .main h2 {
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: normal;
+    }
+
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 40px;
+        font-size: 14px;
+    }
+
+    .category {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        border-radius: 6px;
+        margin-right: 12px;
+        border: 1px solid #ccc;
+    }
+
+    .category span {
+        text-decoration: underline;
+    }
+
+    .category:hover span {
+        color: #ffeb3b;
+    }
+</style>
+</head>
+<body>
+
+<div class="window">
+    <div class="titlebar">Control Panel</div>
+
+    <div class="content">
+        <div class="sidebar">
+            <h4>Control Panel</h4>
+            <p><strong>Switch to Classic View</strong></p>
+
+            <h4>See Also</h4>
+            <p>Windows Update</p>
+            <p>Help and Support</p>
+            <p>Other Control Panel Options</p>
+        </div>
+
+        <div class="main">
+            <h2>Pick a category</h2>
+
+            <div class="categories">
+                <div class="category"><div class="icon"></div><span>Appearance and Themes</span></div>
+                <div class="category"><div class="icon"></div><span>Printers and Other Hardware</span></div>
+
+                <div class="category"><div class="icon"></div><span>Network and Internet Connections</span></div>
+                <div class="category"><div class="icon"></div><span>User Accounts</span></div>
+
+                <div class="category"><div class="icon"></div><span>Add or Remove Programs</span></div>
+                <div class="category"><div class="icon"></div><span>Date, Time, Language, and Regional Options</span></div>
+
+                <div class="category"><div class="icon"></div><span>Sounds, Speech, and Audio Devices</span></div>
+                <div class="category"><div class="icon"></div><span>Accessibility Options</span></div>
+
+                <div class="category"><div class="icon"></div><span>Performance and Maintenance</span></div>
+                <div class="category"><div class="icon"></div><span>Security Center</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
