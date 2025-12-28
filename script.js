@@ -30,7 +30,7 @@ const icons = [
   {
     title: 'Internet Explorer',
     img: 'https://www.marketplace.org/wp-content/uploads/2020/08/Windows_Internet_Explorer_Logo.png',
-    url: './windowifarme/ie.html/'
+    url: './windowifarme/ie.html'
   },
   {
     title: 'Photoshop CS6',
@@ -143,3 +143,4 @@ btn.addEventListener("click", () => {
   btn.classList.toggle("active");
 
 });
+
